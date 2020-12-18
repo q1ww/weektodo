@@ -11,7 +11,7 @@ if(localStorage.getItem('ToDo')){
 }
 
 buttonAddListBtn.addEventListener('click', function(e){
-    
+    e.preventDefault()
     if(!overZadachInput.value) return
     
     const obj = {
@@ -25,12 +25,12 @@ buttonAddListBtn.addEventListener('click', function(e){
 })
 
 
-function renderLists(){
+function renderLists(e){
     let renderText = "";
     mas.forEach((item,i) =>{
         renderText += `
         <li class="ulList">
-           <p  class="${item.doit ? "impot" : ''}">${item.myText}</p>
+         <div class="ulList__in"><p  class="${item.doit ? "impot" : ''}">${item.myText}</p></div>
            <div class="imgOverBloks">
                <div class="ulList__galochka">
               <img src="https://s1.iconbird.com/ico/2013/12/517/w512h5121386955471success.png" data-sdelano="${i}" class="ulList__galochka-img" alt="sdelano">
@@ -49,8 +49,8 @@ function renderLists(){
 
 
 function justDela(e){
+    e.preventDefault()
     let target = e.target;
-   
     if(target.classList.contains('ulList__galochka-img')){
         mas.filter((item,ind) =>{
             let doiting = target.dataset.sdelano;
@@ -68,6 +68,7 @@ function justDela(e){
 
 
 function notDela(e){
+    e.preventDefault()
     let target = e.target;
      if(target.classList.contains('ulList__remove-img')){
         let index = target.dataset.index 

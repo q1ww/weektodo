@@ -84,7 +84,7 @@ p{
 .ulList__in{
     max-width: 300px;
     width: 100%;
-    word-break: break-all;
+    -webkit-word-break: break-all;
 }
 
 .ulList{
