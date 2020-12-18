@@ -1,0 +1,119 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+
+body,html{
+    padding: 0;
+    margin: 0;
+}
+
+ul,ol{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.impot{
+    text-decoration: line-through;
+}
+
+p{
+    margin: 0;
+}
+
+.textDecar{
+    text-decoration: line-through;
+}
+
+.todoList{
+    max-width: 560px;
+    padding: 0 15px;
+    margin: 20px auto;
+}
+
+.todoList__header{
+    text-align: center;
+    font-size: 26px;
+    color: #636363;
+    margin-bottom: 10px;
+}
+
+.overZadach{
+    box-shadow: 0px 0px 5px 0px #00000029;
+    background: white;
+    max-width: 419px;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.ulList__remove, .ulList__galochka{
+    max-width: 20px;
+}
+
+.ulList__galochka-img, .ulList__remove-img{
+    width: 100%;
+    display: block;
+}
+
+.ulList__remove{
+    margin-left: 10px;
+}
+
+.overZadach__input{
+    width: 100%;
+    border: 1px solid #e8e7e7;
+    color: black;
+    font-size: 16px;
+    height: 45px;
+    padding: 0 15px;
+    border-radius: 10px;
+}
+
+.ulList__text{
+    font-size: 17px;
+    font-weight: normal;
+    font-family: sans-serif;
+    text-transform: capitalize;
+    color: #666161;
+}
+
+
+
+.ulList{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #faf9f9;
+    height: 45px;
+    padding: 0 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+.imgOverBloks{
+    display: flex;
+}
+
+.todoList__info{
+    color: #676363;
+    font-size: 16px;
+    max-width: 330px;
+    margin: 10px auto;
+}
+.buttonAddList{
+    text-align: center;
+    margin-top: 15px;
+}
+.buttonAddList__btn{
+    border: none;
+    background: #03f8ff;
+    color: #ffffff;
+    height: 30px;
+    padding: 0 18px;
+    border-radius: 5px;
+    font-weight: bold;
+}
