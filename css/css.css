@@ -81,14 +81,18 @@ p{
     color: #666161;
 }
 
-
+.ulList__in{
+    max-width: 300px;
+    width: 100%;
+    word-break: break-all;
+}
 
 .ulList{
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: #faf9f9;
-    height: 45px;
+    min-height: 45px;
     padding: 0 15px;
     margin-top: 10px;
     margin-bottom: 10px;
