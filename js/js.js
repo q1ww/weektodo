@@ -4,6 +4,24 @@ const buttonAddListBtn = document.querySelector('.buttonAddList__btn'),
 
       
 let mas = []
+let weekDays = [
+  'Воскресенье',
+  'Понедельник',
+  'Вторник',
+  'Среда',
+  'Четверг',
+  'Пятница',
+  'Суббота',
+]
+
+let date = new Date()
+let weekDayss = date.getDay()
+let days = weekDays[weekDayss]
+let hours = date.getHours()
+let minurts = date.getMinutes();
+
+let sbor = days + " - " + hours + ":" + minurts;
+
 
 if(localStorage.getItem('ToDo')){
     mas = JSON.parse(localStorage.getItem('ToDo'))
@@ -11,12 +29,13 @@ if(localStorage.getItem('ToDo')){
 }
 
 buttonAddListBtn.addEventListener('click', function(e){
-    e.preventDefault()
+   window.location.reload()
     if(!overZadachInput.value) return
     
     const obj = {
         myText: overZadachInput.value,
-        doit: false
+        doit: false,
+        dates: sbor
     }
     
     mas.push(obj)
@@ -25,11 +44,15 @@ buttonAddListBtn.addEventListener('click', function(e){
 })
 
 
+
 function renderLists(e){
     let renderText = "";
     mas.forEach((item,i) =>{
+        console.log(item)
         renderText += `
         <li class="ulList">
+        
+        <div class="ulList__flex">
          <div class="ulList__in"><p  class="${item.doit ? "impot" : ''}">${item.myText}</p></div>
            <div class="imgOverBloks">
                <div class="ulList__galochka">
@@ -39,6 +62,8 @@ function renderLists(e){
               <img src="https://www.freeiconspng.com/thumbs/x-png/x-png-15.png" data-index="${i}" alt="remove" class="ulList__remove-img">
            </div>
            </div>
+          </div>
+          <div class="ulList__data">${item.dates}</div>
        </li>       
         `;
         
