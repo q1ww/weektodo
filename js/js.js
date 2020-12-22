@@ -14,14 +14,6 @@ let weekDays = [
   'Суббота',
 ]
 
-let date = new Date()
-let weekDayss = date.getDay()
-let days = weekDays[weekDayss]
-let hours = date.getHours()
-let minurts = date.getMinutes();
-
-let sbor = days + " - " + hours + ":" + minurts;
-
 
 if(localStorage.getItem('ToDo')){
     mas = JSON.parse(localStorage.getItem('ToDo'))
@@ -29,9 +21,18 @@ if(localStorage.getItem('ToDo')){
 }
 
 buttonAddListBtn.addEventListener('click', function(e){
-   window.location.reload()
+    let date = new Date()
+let weekDayss = date.getDay()
+let days = weekDays[weekDayss]
+let hours = date.getHours()
+let minurts = date.getMinutes();
+minurts = minurts < 10 ? "0" + minurts : minurts;
+
+let sbor = days + " - " + hours + ":" + minurts;
+
+
+   e.preventDefault()
     if(!overZadachInput.value) return
-    
     const obj = {
         myText: overZadachInput.value,
         doit: false,
